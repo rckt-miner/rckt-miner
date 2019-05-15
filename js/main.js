@@ -145,7 +145,7 @@
 		return window.performance ? window.performance.now() : Date.now();
 	}
     
-    var count = 1000;
+    var count = 0;
     var delay = 0;
     
     var initTick = 1000000;
@@ -167,7 +167,7 @@
 	var col = 0;
 	function saveCoins() {
 		col = col + 1;
-		alert(col);
+		console.log(col);
 		setTimeout(saveCoins, 10000);
 	}
 
