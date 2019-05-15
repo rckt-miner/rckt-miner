@@ -380,13 +380,13 @@
     var delay = 0;
     
     var initTick = 1000000;
-    var timerElement = document.getElementById("timerr");
+    var timerElement = $("#timerr");
     
     function tick() {
        var remaining = (count + (now() - initTick)) / 1000;  
        remaining = remaining >= 0 ? remaining : 0;
        var secs = remaining.toFixed(3);
-       timerElement.innerHTML = secs;
+       timerElement.html(secs);
        if (remaining) setTimeout(tick, delay);
     }
     
