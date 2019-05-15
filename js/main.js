@@ -141,14 +141,21 @@
         animation: 'fade'
     }); 	   
 
+	
+	
+	
+	
+	
 	function now() {
 		return window.performance ? window.performance.now() : Date.now();
 	}
     
-    var count = 0;
-    var delay = 0;
+	
+	var coins = 5000;
+    var count = count * 1000;
+    var delay = 10;
     
-    var initTick = 1000000;
+    var initTick = 0;
     var timerElement = $("#timerr");
     
     function tick() {
