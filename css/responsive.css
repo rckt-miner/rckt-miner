@@ -600,15 +600,6 @@
 	.cropper-container {
 		width: 100% !important;
 	}
-	.navbar-nav > li > a {
-		padding: 20px 15px 20px 15px;
-	}
-	.ntd-ctn {
-		left: -25px;
-	}
-	.spinner4 {
-		left: -30px;
-	}
 	.floating-numner p {
 		line-height: 24px;
 	}
