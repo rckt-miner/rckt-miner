@@ -145,7 +145,7 @@
 		return window.performance ? window.performance.now() : Date.now();
 	}
     
-    var count = 0;
+    var count = 1000;
     var delay = 0;
     
     var initTick = 1000000;
