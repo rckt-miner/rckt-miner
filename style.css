@@ -359,9 +359,9 @@ body {}
 	color:#00c292;
 }
 .ntd-ctn {
-	position: absolute;
+    position: absolute;
     top: 8px;
-    left: -8px;
+    left: 28px;
     font-size: 10px;
     background: #e46a76;
     height: 18px;
@@ -372,13 +372,13 @@ body {}
     z-index: 999;
 }
 .spinner4 {
-	width: 15px;
+    width: 15px;
     height: 15px;
     border-radius: 50%;
     position: absolute;
     display: inline-block;
     top: 3px;
-    left: -14px;
+    left: 22px;
 }
 .spinner4:after, .spinner4:before {
   content: "";
