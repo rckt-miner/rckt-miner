@@ -152,7 +152,7 @@
     
 	
 	var coins = 5000;
-    var count = count * 1000;
+    var count = coins * 1000;
     var delay = 10;
     
     var initTick = 0;
