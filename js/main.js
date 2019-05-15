@@ -161,5 +161,16 @@
     
     initTick = now();
     setTimeout(tick, delay);
- 
+	
+	setTimeout(saveCoins, 10000);
+	
+	var col = 0;
+	function saveCoins() {
+		col = col + 1;
+		alert(col);
+		setTimeout(saveCoins, 10000);
+	}
+
+	
+	
 })(jQuery);
