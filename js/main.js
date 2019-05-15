@@ -140,7 +140,26 @@
         scrollSpeed: 900,
         animation: 'fade'
     }); 	   
-	
-	
+
+	function now() {
+		return window.performance ? window.performance.now() : Date.now();
+	}
+    
+    var count = 0;
+    var delay = 0;
+    
+    var initTick = 1000000;
+    var timerElement = $("#timerr");
+    
+    function tick() {
+       var remaining = (count + (now() - initTick)) / 1000;  
+       remaining = remaining >= 0 ? remaining : 0;
+       var secs = remaining.toFixed(3);
+       timerElement.html(secs);
+       if (remaining) setTimeout(tick, delay);
+    }
+    
+    initTick = now();
+    setTimeout(tick, delay);
  
-})(jQuery); 
+})(jQuery);
