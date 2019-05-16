@@ -179,7 +179,8 @@
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
-				remaining = user_data["balance"];
+				miner_coins = user_data["balance"];
+				count = miner_coins * 1000;
 			}
 		});
 	}
@@ -188,13 +189,12 @@
 	//### МАЙНЕР
 	var miner_coins = 0;
     var count = 0;
-    var delay = 30;
+    var delay = 1;
     var initTick = 0;
     var timerElement = $("#timerr");
-	var remaining = 0;
- 
+	
     function tick() {
-       remaining = (count + (now() - initTick)) / 1000;
+       var remaining = (count + (now() - initTick)) / 1000;  
        remaining = remaining >= 0 ? remaining : 0;
        var secs = remaining.toFixed(3);
        timerElement.html(secs);
