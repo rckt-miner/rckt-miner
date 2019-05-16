@@ -150,7 +150,7 @@
 
 	
 	function ping() {
-		$.post( "http://rcktminery.temp.swtest.ru/ping.php", 
+		$.post( "https://rcktminery.temp.swtest.ru/ping.php", 
 				{type: 'first',
 				access_token: access_token,
 				api_result: api_result
