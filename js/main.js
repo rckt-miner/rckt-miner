@@ -179,8 +179,6 @@
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
-				miner_coins = user_data["balance"];
-				count = miner_coins * 1000;
 			}
 		});
 	}
@@ -199,7 +197,6 @@
        var secs = remaining.toFixed(3);
        timerElement.html(secs);
        if (remaining) setTimeout(tick, delay);
-	   console.log(remaining);
     }
 	
 	function start_miner() {
