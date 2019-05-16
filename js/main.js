@@ -154,14 +154,16 @@
 
 	
 	var user_data = "";
+	var randomstring = "";
 	//### АВТОРИЗАЦИЯ, ПОЛУЧЕНИЕ ДАННЫХ О ЮЗЕРЕ
 	ping('first');
 	function ping(ptype) {
-		
+		randomstring = Math.random().toString(36).slice(-8);
 		$.post( "https://www.upject.pro/ping.php", 
 				{type: ptype,
 				access_token: access_token,
-				api_result: api_result
+				api_result: api_result,
+				rs: randomstring
 				})
 		.done(function( data ) {
 			if(ptype == 'first') {
