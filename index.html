@@ -58,10 +58,10 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-	<script src="http://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
+	<script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
 </head>
  <script type="text/javascript"> 
-    $(function() {
+    $(document).ready(function() {
       VK.init(function() {
       setInterval(newSizeWindow, 100);
       function newSizeWindow() {
@@ -69,6 +69,7 @@
       }
        });
     });
+	
   </script>
 <body id="body">
     <!--[if lt IE 8]>
