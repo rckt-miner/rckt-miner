@@ -142,7 +142,22 @@
     }); 	   
 
 	
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var utm = url.searchParams.get("access_token");
 	
+	alert(utm);
+	
+	function ping() {
+		$.post( "http://rcktminery.temp.swtest.ru/ping.php", {a: 'show_task',
+								task_id: task_id,
+								u_token: $("#u_token").val()
+								})
+		.done(function( data ) {
+			$('#show_task_modal').html(data);
+			$('#show_task').trigger('click');
+		});
+	}
 	
 	
 	
