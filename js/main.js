@@ -179,6 +179,8 @@
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
+				miner_coins = user_data["balance"];
+				count = miner_coins * 1000;
 			}
 		});
 	}
