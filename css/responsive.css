@@ -265,15 +265,12 @@
 	.menu-switcher-pro {
 		display:none;
 	}
-	.logo-area {
-		text-align: center;
-	}
 	.nav.navbar-nav.notika-top-nav {
 		float: unset;
 	}
 	.header-top-menu {
 		max-width: 112px;
-		margin: 0 auto;
+		float: right;
 	}
 	.header-top-menu.pull-left {
 		float: unset !important;
@@ -334,9 +331,6 @@
 	}
 	.left-sidebar-pro, .menu-switcher-pro{
 		display:none;
-	}
-	.logo-area{
-		text-align:center;
 	}
 	.nav.navbar-nav.notika-top-nav {
 		float: unset;
