@@ -212,7 +212,13 @@
 	
 })(jQuery);
 
-	$('#btn_rmp').on('click', function(){
-	  $("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;">');
-	  $("#open_modal").click();
+
+$('#btn_rmp').on('click', function(){
+	$("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"><p class="mt-15">Загрузка...</p>');
+
+	$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: 'rmp'})
+	.done(function( data ) {
+		$("#modal").html(data);
 	});
+
+});
