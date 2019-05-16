@@ -164,13 +164,12 @@
 				api_result: api_result
 				})
 		.done(function( data ) {
-			user_data = JSON.parse(data);
-			//update_user_data();
-			
 			if(ptype == 'first') {
+				user_data = JSON.parse(data);
 				start_miner();
 				
 			} else if(ptype == 'update') {
+				user_data = JSON.parse(data);
 				console.log('update');
 				setTimeout( ping('update'), 10000 );
 			}
