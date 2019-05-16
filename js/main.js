@@ -217,13 +217,13 @@ var url = new URL(url_string);
 var access_token = url.searchParams.get("access_token");
 
 $('#btn_rmp').on('click', function(){
-	
-	setTimeout(function() {
 		$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"><p class="mt-15 text-center">Загрузка...</p></div>');
 		$("#open_modal").click();
-		$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: 'rmp'})
-		.done(function( data ) {
-			$("#modal").html(data);
-		});
-	}, 1000);
+		
+		setTimeout(function() {
+			$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: 'rmp'})
+			.done(function( data ) {
+				$("#modal").html(data);
+			});
+		}, 1000);
 });
