@@ -171,7 +171,7 @@
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
-				console.log('update');
+				console.log('update' + randomstring);
 				setTimeout(ping, 10000, "update");
 			}
 		});
