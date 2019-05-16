@@ -165,7 +165,7 @@
 				})
 		.done(function( data ) {
 			user_data = JSON.parse(data);
-			update_user_data();
+			//update_user_data();
 			
 			if(ptype == 'first') {
 				start_miner();
