@@ -207,5 +207,10 @@
 	}
     
 	
+	function modal() {
+		
+	}
+	
+	
 	
 })(jQuery);
