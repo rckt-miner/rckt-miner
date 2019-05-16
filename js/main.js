@@ -165,11 +165,10 @@
 				})
 		.done(function( data ) {
 			alert(data);
-			if(ptype = 'first') {
+			if(ptype == 'first') {
 				user_data = JSON.parse(data);
 				start_miner();
-			}
-			if(ptype = 'update') {
+			} else {
 				user_data = JSON.parse(data);
 				console.log('update');
 				setTimeout(ping('update'), 10000);
