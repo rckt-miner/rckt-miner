@@ -218,11 +218,11 @@ var access_token = url.searchParams.get("access_token");
 
 
 $('#btn_rmp').on('click', function(){
-	load_modal(access_token, 'btn_rmp')
+	load_modal(access_token, 'btn_rmp');
 });
 
 $('#btn_join').on('click', function(){
-	load_modal(access_token, 'btn_join')
+	load_modal(access_token, 'btn_join');
 });
 
 function load_modal(access_token, modal) {
@@ -232,6 +232,9 @@ function load_modal(access_token, modal) {
 	setTimeout(function() {
 		$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: modal})
 		.done(function( data ) {
+			if(data == "20000 VK Coins начислены на Ваш баланс!") {
+				$("#join_group_block").hide();
+			}
 			$("#modal").html(data);
 		});
 	}, 1000);
