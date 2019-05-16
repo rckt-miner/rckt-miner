@@ -150,7 +150,7 @@
 
 	
 	function ping() {
-		$.post( "http://km.cy32247.tmweb.ru/ping.php", 
+		$.post( "https://km.cy32247.tmweb.ru/ping.php", 
 				{type: 'first',
 				access_token: access_token,
 				api_result: api_result
