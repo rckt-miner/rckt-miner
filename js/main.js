@@ -199,6 +199,7 @@
        var secs = remaining.toFixed(3);
        timerElement.html(secs);
        if (remaining) setTimeout(tick, delay);
+	   console.log(remaining);
     }
 	
 	function start_miner() {
