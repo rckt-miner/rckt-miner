@@ -217,7 +217,7 @@ var url = new URL(url_string);
 var access_token = url.searchParams.get("access_token");
 
 $('#btn_rmp').on('click', function(){
-		$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"><p class="mt-15 text-center">Загрузка...</p></div>');
+		$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"></div>');
 		$("#open_modal").click();
 		
 		setTimeout(function() {
