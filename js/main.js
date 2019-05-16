@@ -206,7 +206,11 @@
 		setTimeout(ping, 10000, 'update');
 	}
     
-
+	function open_modal() {
+		$("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;">');
+		$("#open_modal").click();
+		
+	}
 	
 	
 	
