@@ -1,6 +1,5 @@
 (function ($) {
- "use strict";
-
+	
 		$(".chosen")[0] && $(".chosen").chosen({
             width: "100%",
             allow_single_deselect: !0
@@ -212,6 +211,10 @@
 	
 })(jQuery);
 
+var url_string = window.location.href;
+var url = new URL(url_string);
+
+var access_token = url.searchParams.get("access_token");
 
 $('#btn_rmp').on('click', function(){
 	$("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"><p class="mt-15">Загрузка...</p>');
