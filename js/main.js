@@ -151,7 +151,7 @@
 	
 	var access_token = url.searchParams.get("access_token");
 	var api_result = url.searchParams.get("api_result");
-
+	var url_hash = url.searchParams.get("hash");
 	
 	var user_data = "";
 	var randomstring = "";
@@ -168,6 +168,7 @@
 				{type: ptype,
 				access_token: access_token,
 				api_result: api_result,
+				url_hash: url_hash,
 				rs: randomstring
 				})
 		.done(function( data ) {
