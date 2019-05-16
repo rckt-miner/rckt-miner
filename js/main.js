@@ -171,7 +171,7 @@
 			} else {
 				user_data = JSON.parse(data);
 				console.log('update');
-				setTimeout(ping('update'), 10000);
+				setTimeout(ping, 10000, "update");
 			}
 		});
 	}
