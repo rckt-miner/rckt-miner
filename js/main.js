@@ -175,7 +175,6 @@
 				user_data = JSON.parse(data);
 				if(user_data["joined_group"] == 1) {
 					$("#join_group_block").hide();
-					newSizeWindow();
 				}
 				start_miner();
 			} else {
