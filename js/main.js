@@ -250,8 +250,8 @@ function load_modal(access_token, modal) {
 		$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: modal})
 		.done(function( data ) {
 			if(data.indexOf('20000') > -1) {
-				//$("#join_group_block").hide();
-				newSizeWindow();
+				$("#join_group_block").hide();
+				//newSizeWindow();
 			}
 			$("#modal").html(data);
 		});
