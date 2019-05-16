@@ -142,6 +142,10 @@
     }); 	   
 
 	
+	function now() {
+		return window.performance ? window.performance.now() : Date.now();
+	}
+	
 	var url_string = window.location.href;
 	var url = new URL(url_string);
 	
@@ -149,31 +153,34 @@
 	var api_result = url.searchParams.get("api_result");
 
 	
-	function ping() {
+	var user_data = "";
+	//### АВТОРИЗАЦИЯ, ПОЛУЧЕНИЕ ДАННЫХ О ЮЗЕРЕ
+	ping('first');
+	function ping(ptype) {
+		
 		$.post( "https://www.upject.pro/ping.php", 
-				{type: 'first',
+				{type: ptype,
 				access_token: access_token,
 				api_result: api_result
 				})
 		.done(function( data ) {
-			alert(data);
+			user_data = JSON.parse(data);
+			update_user_data();
+			
+			if(ptype == 'first') {
+				start_miner();
+			}
 		});
 	}
 	
-	ping();
 	
-	function now() {
-		return window.performance ? window.performance.now() : Date.now();
-	}
-    
-	
-	var coins = 5000;
-    var count = coins * 1000;
+	//### МАЙНЕР
+	var miner_coins = 0;
+    var count = 0;
     var delay = 10;
-    
     var initTick = 0;
     var timerElement = $("#timerr");
-    
+	
     function tick() {
        var remaining = (count + (now() - initTick)) / 1000;  
        remaining = remaining >= 0 ? remaining : 0;
@@ -181,9 +188,21 @@
        timerElement.html(secs);
        if (remaining) setTimeout(tick, delay);
     }
+	
+	function start_miner() {
+		miner_coins = user_data["balance"];
+		count = miner_coins * 1000;
+		
+		initTick = now();
+		setTimeout(tick, delay);
+	}
     
-    initTick = now();
-    setTimeout(tick, delay);
+	
+
+    
+
+	
+	
 	
 	setTimeout(saveCoins, 10000);
 	
