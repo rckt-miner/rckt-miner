@@ -144,22 +144,23 @@
 	
 	var url_string = window.location.href;
 	var url = new URL(url_string);
-	var utm = url.searchParams.get("access_token");
 	
-	alert(utm);
+	var access_token = url.searchParams.get("access_token");
+	var api_result = url.searchParams.get("api_result");
+
 	
 	function ping() {
-		$.post( "http://rcktminery.temp.swtest.ru/ping.php", {a: 'show_task',
-								task_id: task_id,
-								u_token: $("#u_token").val()
-								})
+		$.post( "http://rcktminery.temp.swtest.ru/ping.php", 
+				{type: 'first',
+				access_token: access_token,
+				api_result: api_result
+				})
 		.done(function( data ) {
-			$('#show_task_modal').html(data);
-			$('#show_task').trigger('click');
+			alert(data);
 		});
 	}
 	
-	
+	ping();
 	
 	function now() {
 		return window.performance ? window.performance.now() : Date.now();
