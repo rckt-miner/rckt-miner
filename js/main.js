@@ -173,6 +173,10 @@
 		.done(function( data ) {
 			if(ptype == 'first') {
 				user_data = JSON.parse(data);
+				if(user_data["joined_group"] == 1) {
+					$("#join_group_block").hide();
+					newSizeWindow();
+				}
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
@@ -244,6 +248,7 @@ function load_modal(access_token, modal) {
 		.done(function( data ) {
 			if(data.indexOf('20000') > -1) {
 				$("#join_group_block").hide();
+				newSizeWindow();
 			}
 			$("#modal").html(data);
 		});
