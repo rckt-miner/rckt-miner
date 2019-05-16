@@ -181,7 +181,7 @@
 	//### МАЙНЕР
 	var miner_coins = 0;
     var count = 0;
-    var delay = 10;
+    var delay = 30;
     var initTick = 0;
     var timerElement = $("#timerr");
 	
