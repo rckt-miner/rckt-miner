@@ -164,6 +164,7 @@
 				api_result: api_result
 				})
 		.done(function( data ) {
+			alert(data);
 			if(ptype == 'first') {
 				user_data = JSON.parse(data);
 				start_miner();
