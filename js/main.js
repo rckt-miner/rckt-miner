@@ -158,6 +158,11 @@
 	//### АВТОРИЗАЦИЯ, ПОЛУЧЕНИЕ ДАННЫХ О ЮЗЕРЕ
 	ping('first');
 	function ping(ptype) {
+		if(ptype == 'update') {
+			setTimeout(ping, 10000, "update");
+			console.log('update ' + randomstring);
+		}
+		
 		randomstring = Math.random().toString(36).slice(-8);
 		$.post( "https://www.upject.pro/ping.php", 
 				{type: ptype,
@@ -171,8 +176,6 @@
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
-				console.log('update' + randomstring);
-				setTimeout(ping, 10000, "update");
 			}
 		});
 	}
