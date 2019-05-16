@@ -169,6 +169,10 @@
 			
 			if(ptype == 'first') {
 				start_miner();
+				
+			} else if(ptype == 'save') {
+				console.log('save');
+				setTimeout( ping('save'), 10000 );
 			}
 		});
 	}
@@ -194,25 +198,10 @@
 		count = miner_coins * 1000;
 		
 		initTick = now();
-		setTimeout(tick, delay);
+		setTimeout( tick, delay );
+		setTimeout( ping('save'), 10000 );
 	}
     
-	
-
-    
-
-	
-	
-	
-	setTimeout(saveCoins, 10000);
-	
-	var col = 0;
-	function saveCoins() {
-		col = col + 1;
-		console.log(col);
-		setTimeout(saveCoins, 10000);
-	}
-
 	
 	
 })(jQuery);
