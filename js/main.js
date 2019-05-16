@@ -213,17 +213,26 @@
 
 var url_string = window.location.href;
 var url = new URL(url_string);
-
 var access_token = url.searchParams.get("access_token");
 
+
+
 $('#btn_rmp').on('click', function(){
-		$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"></div>');
-		$("#open_modal").click();
-		
-		setTimeout(function() {
-			$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: 'rmp'})
-			.done(function( data ) {
-				$("#modal").html(data);
-			});
-		}, 1000);
+	load_modal(access_token, 'btn_rmp')
 });
+
+$('#btn_join').on('click', function(){
+	load_modal(access_token, 'btn_join')
+});
+
+function load_modal(access_token, modal) {
+	$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"></div>');
+	$("#open_modal").click();
+	
+	setTimeout(function() {
+		$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: modal})
+		.done(function( data ) {
+			$("#modal").html(data);
+		});
+	}, 1000);
+}
