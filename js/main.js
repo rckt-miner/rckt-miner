@@ -214,14 +214,14 @@
 	
 })(jQuery);
 
-    $(document).ready(function() {
-		VK.init(function() {
-			setInterval(newSizeWindow, 100);
-			function newSizeWindow() {
-			  VK.callMethod("resizeWindow",800,$('#body').height());
-			}
-       });
-    });
+$(document).ready(function() {
+	VK.init(function() {
+		setInterval(newSizeWindow, 100);
+		function newSizeWindow() {
+		  VK.callMethod("resizeWindow",800,$('#body').height());
+		}
+   });
+});
 
 
 var url_string = window.location.href;
