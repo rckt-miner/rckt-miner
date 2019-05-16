@@ -238,6 +238,10 @@ $('#btn_join').on('click', function(){
 	load_modal(access_token, 'btn_join');
 });
 
+$('#btn_notify_list').on('click', function(){
+	load_modal(access_token, 'btn_notify_list');
+});
+
 function load_modal(access_token, modal) {
 	$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"></div>');
 	$("#open_modal").click();
