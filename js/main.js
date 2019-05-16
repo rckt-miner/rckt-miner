@@ -206,11 +206,13 @@
 		setTimeout(ping, 10000, 'update');
 	}
     
-	$('#btn_rmp').on('click', function(){
-	  $("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;">');
-	  $("#open_modal").click();
-	});
+
 
 	
 	
 })(jQuery);
+
+	$('#btn_rmp').on('click', function(){
+	  $("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;">');
+	  $("#open_modal").click();
+	});
