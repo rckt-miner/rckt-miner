@@ -164,7 +164,6 @@
 				api_result: api_result
 				})
 		.done(function( data ) {
-			alert(data);
 			if(ptype == 'first') {
 				user_data = JSON.parse(data);
 				start_miner();
@@ -198,7 +197,7 @@
 		
 		initTick = now();
 		setTimeout( tick, delay );
-		setTimeout(ping('update'), 10000);
+		setTimeout(ping, 10000, 'update');
 	}
     
 	
