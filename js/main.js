@@ -211,6 +211,16 @@
 	
 })(jQuery);
 
+    $(document).ready(function() {
+		VK.init(function() {
+			setInterval(newSizeWindow, 100);
+			function newSizeWindow() {
+			  VK.callMethod("resizeWindow",800,$('#body').height());
+			}
+       });
+    });
+
+
 var url_string = window.location.href;
 var url = new URL(url_string);
 var access_token = url.searchParams.get("access_token");
