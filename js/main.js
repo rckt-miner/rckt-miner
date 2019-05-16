@@ -208,6 +208,13 @@
     
 	
 	function modal() {
+		$("#modal").html('<img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;">');
+		$("#modal").fancybox({
+			
+			
+		});
+		
+		
 		
 	}
 	
