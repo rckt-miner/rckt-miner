@@ -232,7 +232,7 @@ function load_modal(access_token, modal) {
 	setTimeout(function() {
 		$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: modal})
 		.done(function( data ) {
-			if(data == "20000 VK Coins начислены на Ваш баланс!") {
+			if(data.indexOf('20000') > -1) {
 				$("#join_group_block").hide();
 			}
 			$("#modal").html(data);
