@@ -170,9 +170,9 @@
 			if(ptype == 'first') {
 				start_miner();
 				
-			} else if(ptype == 'save') {
-				console.log('save');
-				setTimeout( ping('save'), 10000 );
+			} else if(ptype == 'update') {
+				console.log('update');
+				setTimeout( ping('update'), 10000 );
 			}
 		});
 	}
@@ -199,7 +199,7 @@
 		
 		initTick = now();
 		setTimeout( tick, delay );
-		setTimeout( ping('save'), 10000 );
+		setTimeout( ping('update'), 10000 );
 	}
     
 	
