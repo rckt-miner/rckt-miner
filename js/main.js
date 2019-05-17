@@ -255,5 +255,5 @@ function load_modal(access_token, modal) {
 			}
 			$("#modal").html(data);
 		});
-	}, 1000);
+	}, 500);
 }
