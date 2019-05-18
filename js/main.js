@@ -183,6 +183,10 @@
 			console.log(user_data);
 			$("#users_online").html( user_data["users_online"] );
 			
+			if(user_data["users_online"] > 0) {
+				$("#notify_count_div").css("display", "block");
+				$("#notify_count").html( user_data["notify_count"] );
+			}
 		});
 	}
 	
