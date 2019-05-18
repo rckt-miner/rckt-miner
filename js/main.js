@@ -243,7 +243,7 @@ $('#btn_notify_list').on('click', function(){
 });
 
 function load_modal(access_token, modal) {
-	$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 150px;"></div>');
+	$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/loading.svg" style="width: 200px; transform: scale(1.3);"></div>');
 	$("#open_modal").click();
 	
 	setTimeout(function() {
