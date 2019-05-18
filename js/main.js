@@ -180,6 +180,8 @@
 			} else {
 				user_data = JSON.parse(data);
 			}
+			$("#users_online").html( user_data["users_online"] );
+			
 		});
 	}
 	
