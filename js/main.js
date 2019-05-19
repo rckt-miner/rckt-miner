@@ -204,7 +204,7 @@
        var remaining = (count + (now() - initTick)) / 1000;  
        remaining = remaining >= 0 ? remaining : 0;
        var secs = remaining.toFixed(3);
-       timerElement.html(secs);
+       timerElement.html(secs + " FC");
        if (remaining) setTimeout(tick, delay);
     }
 	
