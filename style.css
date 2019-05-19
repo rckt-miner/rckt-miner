@@ -2097,11 +2097,15 @@ ul.wizard-nav-ac li .disabled{
 .typography-hd-cr-6.typography-mg-b-0 p{
 	margin-bottom:0px;
 }
+
+#modal {
+	text-align: center!important;
+}
 .text-left{
 	text-align:left;
 }
 .text-center{
-	text-align:center;
+	text-align: center!important;
 }
 .text-right{
 	text-align:right;
