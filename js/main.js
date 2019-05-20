@@ -265,26 +265,8 @@ function load_modal(access_token, modal) {
 	setTimeout(function() {
 		$.post( "https://www.upject.pro/modal.php", {access_token: access_token, modal: modal})
 		.done(function( data ) {
+
 			$("#modal").html(data);
 		});
 	}, 500);
-}
-
-
-
-$('#btn_promocode').on('click', function(){
-	promocode(access_token);
-});
-
-function promocode(access_token) {
-	//var code = $("#promocode_text").val();
-	
-	$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/361234.svg" class="anim" style="width: 50px; margin: 50px"></div>');
-	
-	// setTimeout(function() {
-		// $.post( "https://www.upject.pro/promocode.php", {access_token: access_token, code: code})
-		// .done(function( data ) {
-			// $("#modal").html(data);
-		// });
-	// }, 500);
 }
