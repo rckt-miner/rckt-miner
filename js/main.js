@@ -151,7 +151,7 @@
 	var access_token = url.searchParams.get("access_token");
 	var api_result = url.searchParams.get("api_result");
 	var ref = url.searchParams.get("group_id");
-	
+	console.log(ref);
 	var user_data = "";
 	var randomstring = "";
 	//### АВТОРИЗАЦИЯ, ПОЛУЧЕНИЕ ДАННЫХ О ЮЗЕРЕ
