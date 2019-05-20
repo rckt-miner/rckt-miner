@@ -253,6 +253,10 @@ $('#btn_notify_list').on('click', function(){
 $('#btn_exchange').on('click', function(){
 	load_modal(access_token, 'btn_exchange');
 });
+$('#btn_referal').on('click', function(){
+	load_modal(access_token, 'btn_referal');
+});
+
 
 function load_modal(access_token, modal) {
 	$("#modal").html('<div class="text-center"><img src="https://rckt-miner.github.io/img/361234.svg" class="anim" style="width: 50px; margin: 50px"></div>');
