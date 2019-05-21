@@ -175,7 +175,13 @@
 				user_data = JSON.parse(data);
 				if(user_data["joined_group"] == 1) {
 					$("#join_group_block").hide();
+					if(user_data["refs_count"] > 1) {
+						$("#btn_rmp").html("Активировать");
+					}
+					
 				}
+				
+				
 				start_miner();
 			} else {
 				user_data = JSON.parse(data);
