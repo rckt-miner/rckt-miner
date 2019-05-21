@@ -175,7 +175,7 @@
 				user_data = JSON.parse(data);
 				if(user_data["joined_group"] == 1) {
 					$("#join_group_block").hide();
-					if(user_data["refs_count"] > 1) {
+					if(user_data["refs_count"] > 0) {
 						$("#btn_rmp").html("Активировать");
 					}
 					
