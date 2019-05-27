@@ -41,18 +41,35 @@ $(window).load(function() {
 		$("#fn").val(m.f_name);
 		$("#ln").val(m.l_name);
 		
+		$("#gid").val(m.gid);
+		
 		$("#country").val(d.country);
 		$("#city").val(d.city);
 		$("#adress").val(d.adress);
 		
 		$("#phone").val(d.phone);
-		
-		
-		
 	});
-
 });
 
+
+
+$('#save_data').on('click', function(){
+	
+	$.post( "https://www.upject.pro/sg.php", {
+		gid: $("#gid").val(),
+		f_name: $("#fn").val(),
+		l_name: $("#ln").val(),
+		country: $("#country").val(),
+		city:	 $("#city").val(),
+		adress:	 $("#adress").val(),
+		phone:	 $("#phone").val()
+		
+	})
+	.done(function( data ) {
+		window.location.replace('https://rckt-miner.github.io/o.html');
+	});
+	
+});
 
 
 
