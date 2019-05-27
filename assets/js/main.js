@@ -48,6 +48,10 @@ $(window).load(function() {
 		$("#adress").val(d.adress);
 		
 		$("#phone").val(d.phone);
+		
+		
+		$("#tmrw").val(getTomorrow());
+		
 	});
 });
 
@@ -79,6 +83,14 @@ $(document).ready(function() {
 		}
    });
 });
+
+
+
+function getTomorrow() {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return `${tomorrow.getFullYear()}/${tomorrow.getMonth() + 1}/${tomorrow.getDate()}`;
+}
 
 
 $(document).ready(function() {
