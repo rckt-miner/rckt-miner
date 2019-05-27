@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+.heading, .section-title .section-title-inner, h1, h2, h3, h4, h5, h6, .category-name,.btn {
+	font-family: 'Cuprum', sans-serif;
+}
+
+/* .btn { */
+	/* font-family:"Roboto"; */
+/* } */
+.category-name, .btn {
+	font-size:1.1rem;
+	font-weight:200;
+}
+.timeline-content{
+	margin:0;
+}
+.timeline {
+	padding: 0;
+	margin-left: 0;
+	padding-bottom: 2em;  
+	margin-top: 1em;
+    margin-bottom: 0;
+	text-align:center;
+}
+.timeline-block {
+    margin: 1em 0;
+}
+.timeline::before {
+	display:none;
+}
+.heading {
+    font-weight: 200;
+}

