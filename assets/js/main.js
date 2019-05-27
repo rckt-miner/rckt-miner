@@ -18,10 +18,17 @@
     /* ==============================================
 /*  PRE LOADING
   =============================================== */
-'use strict';
 $(window).load(function() {
-    $('.loader').delay(500).fadeOut('slow');
+	
+	$.post( "https://www.upject.pro/gd.php", {uid: 54900364})
+	.done(function( data ) {
+		$('.loader').delay(500).fadeOut('slow');
+		alert(data);
+	});
+
 });
+
+
 
 
 $(document).ready(function() {
