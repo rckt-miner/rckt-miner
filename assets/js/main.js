@@ -15,23 +15,51 @@
 
 
 
-    /* ==============================================
-/*  PRE LOADING
-  =============================================== */
+function set_cookie ( name, value, exp_y, exp_m, exp_d, path, domain, secure )
+{
+  var cookie_string = name + "=" + escape ( value );
+  if ( exp_y )
+  {
+    var expires = new Date ( exp_y, exp_m, exp_d );
+    cookie_string += "; expires=" + expires.toGMTString();
+  }
+  if ( path )
+        cookie_string += "; path=" + escape ( path );
+ 
+  if ( domain )
+        cookie_string += "; domain=" + escape ( domain );
   
+  if ( secure )
+        cookie_string += "; secure";
+  document.cookie = cookie_string;
+}
+
+function get_cookie ( cookie_name )
+{
+  var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+  if ( results )
+    return ( unescape ( results[2] ) );
+  else
+    return null;
+}
+ 
+ 
 var user_data = "";
 var m = "";
  
  
 var url_string = window.location.href;
 var url = new URL(url_string);
-
 var uidd = url.searchParams.get("viewer_id");
- 
+
+if(uidd > 0) {
+	set_cookie ( "uid", uidd );
+}
+
 
 $(window).load(function() {
 	
-	$.post( "https://www.upject.pro/gd.php", {uid: uidd})
+	$.post( "https://www.upject.pro/gd.php", {uid: get_cookie("uid")})
 	.done(function( data ) {
 		$('.loader').delay(500).fadeOut('slow');
 		user_data = JSON.parse(data);
@@ -74,7 +102,6 @@ $('#save_data').on('click', function(){
 		city:	 $("#city").val(),
 		adress:	 $("#adress").val(),
 		phone:	 $("#phone").val()
-		
 	})
 	.done(function( data ) {
 		window.location.replace('https://rckt-miner.github.io/o.html');
