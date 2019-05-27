@@ -1,299 +1,216 @@
-<?
-$gid = $_GET["gid"];
-if (strpos($_GET["gid"], '/') !== false) {
-    $gid = str_replace('/','',$_GET["gid"]);
-	echo $gid;
-	header('Location: http://'.$_SERVER['HTTP_HOST'].'/?gid='.$gid);
-}
 
-include("host.php");
-
-
-$gd = file_get_contents($host."/gd.php?gid=".$gid);
-
- $gd =  str_replace("%i%", "И",  $gd);
- $gd =  str_replace("%s%", "ш",  $gd);
-	 
-$gd = json_decode($gd, true);
-
-
-if($gd["member"]["ava"] == "") {
-	exit;
-}
-?>
 
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DAROM-CLUB - Итоги розыгрыша #68438</title>
-
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
-
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
-
-	<!-- Plugins -->
-	<link rel="stylesheet" href="assets/css/swiper.min.css">
-	<link rel="stylesheet" href="assets/css/hamburgers.min.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/animate.min.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-
-	<!-- Icons -->
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
-
-	<!-- Global style (main) -->
-	<link id="stylesheet" type="text/css" href="assets/css/boomerang.min.css" rel="stylesheet" media="screen">
-
-	<!-- Custom style - Remove if not necessary -->
-	<link type="text/css" href="assets/css/custom-style.css" rel="stylesheet">
-
-	<!-- Favicon -->
-	<link href="assets/images/favicon.png" rel="icon" type="image/png">
-
-
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Evento -Event Html Template">
+    <meta name="keywords" content="Evento , Event , Html, Template">
+    <meta name="author" content="ColorLib">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- ========== Title ========== -->
+    <title>DAROM-CLUB - Итоги розыгрыша #259916</title>
+    <!-- ========== Favicon Ico ========== -->
+    <!--<link rel="icon" href="fav.ico">-->
+    <!-- ========== STYLESHEETS ========== -->
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts Icon CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/et-line.css" rel="stylesheet">
+    <link href="assets/css/ionicons.min.css" rel="stylesheet">
+    <!-- Carousel CSS -->
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+	
 </head>
 <body>
-<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- MAIN WRAPPER -->
-<div class="body-wrap">
-    <div id="st-container" class="st-container">
-        <div class="st-pusher">
-            <div class="st-content">
-                <div class="st-content-inner">
-                    <!-- Header -->
-	<? include("head.php"); ?>
-
-
-	
-<section class="slice sct-color-2">
-	<div class="container">
-		
-		
-		
-<div class="tabs tabs--style-1 tabs--centered" role="tabpanel">
-    <!-- Nav tabs -->
-   <ul class="nav nav-pills nav-pills--rounded justify-content-center" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a aria-controls="home" role="tab" class="nav-link active text-center text-uppercase strong-500">
-                <div class="nav-pill">
-                    <span class="nav-pill-circle">1</span>
-                    <span class="nav-pill-text text-caps strong-500">Данные получателя</span>
-                </div>
-            </a>
-        </li>
-        <li class="nav-item" role="presentation" class="">
-            <a aria-controls="home" role="tab" class="nav-link text-center text-uppercase strong-500">
-                <div class="nav-pill">
-                    <span class="nav-pill-circle">2</span>
-                    <span class="nav-pill-text text-caps strong-500">Договор дарения</span>
-                </div>
-            </a>
-        </li>
-		<li class="nav-item" role="presentation" class="">
-            <a aria-controls="home" role="tab" class="nav-link text-center text-uppercase strong-500">
-                <div class="nav-pill">
-                    <span class="nav-pill-circle">3</span>
-                    <span class="nav-pill-text text-caps strong-500">Завершение</span>
-                </div>
-            </a>
-        </li>
-    </ul>
-
-    
+<div class="loader">
+    <div class="loader-outter"></div>
+    <div class="loader-inner"></div>
 </div>
 
-		
-	</div>
-</section>
 
-	
+<!--header start here
+<header class="header navbar fixed-top navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand logo" href="#">
+            <img src="assets/img/logo.png" alt="Evento"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-text-align-right"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+            <ul class=" nav navbar-nav menu">
+				<li class="nav-item">
+                    <a class="nav-link active" href="#"> </a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link active" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Speakers</a>
+                </li>
 
-<section class=" sct-color-2 mb-5">
-			<div class="profile">
-				<div class="container">
-					<div class="row cols-xs-space cols-sm-space cols-md-space">
-					<div class="col-lg-2">
-					</div>
-					<div class="col-lg-8">
-					<!-- Customer info -->
-					<form action="sg.php" class="form-default mt-4" id="form_validation" data-toggle="validation" novalidate role="form" method="POST">
-						<input type="hidden" name="gid" value="<? echo $gd["member"]["gid"] ?>">
-						<input type="hidden" name="m" value="<? echo $m ?>">
-						<input type="hidden" name="save" value="true">
-						
-					
-						<div class="card sidebar--style-2">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label">Имя</label>
-											<input name="f_name" value="<? echo $gd["member"]["f_name"]; ?>" id="validationCustom01" type="text" class="form-control form-control-lg" required>
-										</div>
-									</div>
+            </ul>
+        </div>
+    </div>
+</header>
+header end here-->
 
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label">Фамилия</label>
-											<input name="l_name" value="<? echo $gd["member"]["l_name"]; ?>" id="validationCustom02" type="text" class="form-control form-control-lg" required>
-										</div>
-									</div>
-									
-								</div>
-
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group has-feedback">
-											<label class="control-label">Страна</label>
-											<input name="country" value="<? echo $gd["delivery_data"]["country"]?>" id="validationCustom03" type="text" class="form-control form-control-lg" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group has-feedback">
-											<label class="control-label">Город / Населенный пункт</label>
-											<input name="city" value="<? echo $gd["delivery_data"]["city"]?>" id="validationCustom03" type="text" class="form-control form-control-lg" required>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group has-feedback">
-											<label class="control-label">Адрес</label>
-											<input name="adress" value="<? echo $gd["delivery_data"]["adress"]?>" id="validationCustom04" type="text" class="form-control form-control-lg" required>
-										</div>
-										
-									</div>
-									<div class="col-md-6">
-										<div class="form-group has-feedback">
-											<label class="control-label">Телефон</label>
-											<input name="phone" value="<? echo $gd["delivery_data"]["phone"]?>" id="validationCustom06" type="text" class="form-control form-control-lg" required>
-										</div>
-										</div>
-								</div>
-								
-								<div class="row mt-4">
-									<div class="col-md-12">
-										<div class="checkbox checkbox-inline">
-										<input type="checkbox" name="checkbox_example_2" id="checkboxExample_2a">
-										<label for="checkboxExample_2a">Я соглашаюсь на обработку моих персональных данных</a></label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row align-items-center pt-5">
-							<div class=" col-12 text-right">
-								<button onclick="javascript:$('#load').fancybox().trigger('click');" class="btn btn-styled btn-block btn-success">Сохранить и продолжить</button>
-							</div>
-						</div>
-						
-						<div style="display:none;" id="load">
-							<center>Пожалуйста, подождите...</center>
-						</div>
-						
-					</form>
-					
-				</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-</div>
-
-	
-	<footer id="footer" class="footer">
-    <div class="footer-bottom py-3">
-        <div class="container">
-            <div class="row cols-xs-space col-sm-space align-items-center">
-                <div class="col-md-7 col-12">
-                    <div class="text-xs-center text-sm-left">
-                        <ul class="footer-menu">
-                            <li>
-                                <a target="_blank" href="https://vk.com/public127760598" style="padding-left: 0;">НАША ГРУППА</a>
-                            </li>
-                           
-                        </ul>
-
-                        <div class="copyright mt-1">
-                            <ul class="copy-links">
-                                <li>
-                                    © 2018                                 </li>
-                                
-                            </ul>
+<!--cover section slider -->
+<section id="home" class="home-cover">
+    <div class="cover_slider owl-carousel off owl-theme">
+        <div class="cover_item" style="background: url('https://voenik.ru/wp-content/themes/voenik/images/slides/main.jpg');">
+		<div style="background-color: #343a40!important; position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out; opacity:0.8;">
+		</div>
+             <div class="slider_content">
+                <div class="slider-content-inner">
+                    <div class="container">
+                        <div class="slider-content-center">
+                            <h2 class="cover-title">
+                                МЫ РАЗДАЛИ БОНУСЫ НА СУММУ
+                            </h2>
+                            <strong class="cover-xl-text">559857 РУБ.</strong>
+                            <p class="cover-date">
+                                НА ЗАКОННЫХ ОСНОВАНИЯХ                         </p>
+							<a href="#prices" class="btn btn-primary btn-rounded">Подробнее</a>
+							
                         </div>
                     </div>
                 </div>
-			</div>
+            </div>
         </div>
     </div>
-</footer>
-	
-	
+    <div class="cover_nav">
+        <ul class="cover_dots">
+             <span class="lnr lnr-chevron-down fs36" style="color:#f50136"></span>
+        </ul>
+    </div>
+</section>
+<!--cover section slider end -->
+
+
+<section class="pb100" id="prices">
+    <div class="container">
+        <div class="section_title mb50">
+            <h3 class="title">
+                ЦЕНЫ НА РУКОВОДСТВА
+            </h3>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="price_box active">
+                    <div class="price_highlight">
+                      ОТСРОЧКА НА 6 МЕС.
+                    </div>
+                    <div class="price_tag">
+                        590<sup> ₽</sup>
+                    </div>
+					<div class="price_features">
+                        <ul>
+                            <li>
+                                Руководство подробно описывает действия для получения отсрочки на законных основаниях. Включает в себя образцы всех необходимых заявлений
+								<br>
+                            </li>
+							<li>
+							Время на реализацию ~4 дня.
+							</li>
+							<li>
+							Затраты 0₽.
+							</li>
+                        </ul>
+                    </div>
+                    <div class="price_footer">
+                        <a href="#" class="btn btn-primary btn-rounded">Купить руководство</a>
+                    </div>
                 </div>
             </div>
-        </div><!-- END: st-pusher -->
-    </div><!-- END: st-container -->
-</div><!-- END: body-wrap -->
+            <div class="col-md-6 col-12">
+                <div class="price_box active">
+                    <div class="price_highlight">
+                      ВОЕННЫЙ БИЛЕТ
+                    </div>
+                    <div class="price_tag">
+                        990<sup> ₽</sup>
+                    </div>
+					<div class="price_features">
+                        <ul>
+                            <li>
+                                Руководство подробно описывает действия для получения военного билета на законных основаниях. Включает в себя образцы всех необходимых заявлений.
+                            </li>
+							<li>
+							Время на реализацию ~15 дней.
+							</li>
+							<li>
+							Затраты 200-300₽.
+							</li>
+                        </ul>
+                    </div>
+                    <div class="price_footer">
+                        <a href="#" class="btn btn-primary btn-rounded">Купить руководство</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="copyright_footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-12">
+                <p> DAROM-CLUB | Автоматическая система для проведения розыгрышей ВКонтакте</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <!--<ul class="footer_menu">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Speakers</a>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+    </div>
+</div>
 
 
-<!-- Core -->
-
-<script src="assets/js/popper.min.js"></script>
+<!-- jquery -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/popper.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/slidebar/slidebar.js"></script>
-<script src="assets/js/classie.js"></script>
-
-<!-- Bootstrap Extensions -->
-<script src="assets/js/bootstrap-growl.min.js"></script>
-<script src="assets/js/scrollpos-styler.js"></script>
-
-<!-- Plugins: Sorted A-Z -->
-<script src="assets/js/adaptive-backgrounds.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<!--slick carousel -->
+<script src="assets/js/owl.carousel.min.js"></script>
+<!--parallax -->
+<script src="assets/js/parallax.min.js"></script>
+<!--Counter up -->
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!--Counter down -->
 <script src="assets/js/jquery.countdown.min.js"></script>
-<script src="assets/js/dropzone.min.js"></script>
-<script src="assets/js/jquery.easypiechart.min.js"></script>
-<script src="assets/js/jquery.fancybox.min.js"></script>
-<script src="assets/js/flatpickr.min.js"></script>
-<script src="assets/js/flip.min.js"></script>
-<script src="assets/js/footer-reveal.min.js"></script>
-<script src="assets/js/jquery.gradientify.min.js"></script>
-<script src="assets/js/headroom.min.js"></script>
-<script src="assets/js/jquery.headroom.min.js"></script>
-<script src="assets/js/input-mask.min.js"></script>
-<script src="assets/js/instafeed.js"></script>
-<script src="assets/js/jquery.countTo.js"></script>
-<script src="assets/js/nouislider.min.js"></script>
-<script src="assets/js/paraxify.min.js"></script>
-<script src="assets/js/select2.min.js"></script>
-<script src="assets/js/sticky-kit.min.js"></script>
-<script src="assets/js/swiper.min.js"></script>
-<script src="assets/js/autosize.min.js"></script>
-<script src="assets/js/typeahead.bundle.min.js"></script>
-<script src="assets/js/typed.min.js"></script>
-<script src="assets/js/vide.min.js"></script>
-<script src="assets/js/viewportchecker.min.js"></script>
+<!-- WOW JS -->
 <script src="assets/js/wow.min.js"></script>
+<!-- Custom js -->
+<script src="assets/js/main.js"></script>
 
-<!-- Isotope -->
-<script src="assets/js/isotope.min.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-
-
-<!-- App JS -->
-<script src="assets/js/boomerang.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </body>
 </html>
