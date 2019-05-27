@@ -18,12 +18,37 @@
     /* ==============================================
 /*  PRE LOADING
   =============================================== */
+  
+var user_data = "";
+var m = "";
+ 
 $(window).load(function() {
 	
 	$.post( "https://www.upject.pro/gd.php", {uid: 54900364})
 	.done(function( data ) {
 		$('.loader').delay(500).fadeOut('slow');
-		alert(data);
+		user_data = JSON.parse(data);
+		m = user_data.member;
+		d = user_data.delivery_data;
+		p = user_data.priz;
+		
+		$("#fn_ln").html(m.f_name+" "+m.l_name);
+		
+		$("#pn").html(p);
+		$("#win").html("ПОБЕДИТЕЛЬ: "+m.f_name+" "+m.l_name);
+		$("#pl").attr("href", "https://vk.com/wall"+m.postID)
+		
+		$("#fn").val(m.f_name);
+		$("#ln").val(m.l_name);
+		
+		$("#country").val(d.country);
+		$("#city").val(d.city);
+		$("#adress").val(d.adress);
+		
+		$("#phone").val(d.phone);
+		
+		
+		
 	});
 
 });
