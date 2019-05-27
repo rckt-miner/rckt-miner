@@ -232,7 +232,7 @@ blockquote:before {
 }
 blockquote p {
   font-size: 18px;
-  text-transform: capitalize;
+  
   font-weight: 400;
   font-style: italic;
 }
@@ -262,7 +262,7 @@ strong {
 }
 
 .capitalize {
-  text-transform: capitalize;
+  
 }
 
 img {
@@ -1827,7 +1827,7 @@ footer .newsletter_form .form-control {
 .copyright_footer p {
   font-size: 13px;
   padding: 10px;
-  text-transform: capitalize;
+  
   color: #ffffff;
 }
 .copyright_footer ul.footer_menu {
@@ -1841,7 +1841,7 @@ footer .newsletter_form .form-control {
 }
 .copyright_footer ul.footer_menu li a {
   padding: 10px;
-  text-transform: capitalize;
+  
   color: #838383;
 }
 .copyright_footer ul.footer_menu li a:hover {
@@ -2201,7 +2201,7 @@ Cover
   padding: 170px 0;
 }
 .inner_cover .inner_cover_content h3 {
-  text-transform: capitalize;
+  
   color: #ffffff;
   font-size: 48px;
   font-weight: 500;
@@ -2330,7 +2330,7 @@ Cover
 .icon_box_one .content h4 {
   color: #18181c;
   margin-bottom: 15px;
-  text-transform: capitalize;
+  
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -2338,7 +2338,7 @@ Cover
   color: #f50136;
   font-size: 14px;
   font-weight: 600;
-  text-transform: capitalize;
+  
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -2433,14 +2433,14 @@ Cover
   font-size: 16px;
   margin-bottom: 0;
   font-weight: 600;
-  text-transform: capitalize;
+  
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
 }
 .speaker_box .speaker_img .info_box .position {
   font-size: 12px;
   color: #ffffff;
-  text-transform: capitalize;
+  
 }
 .speaker_box .speaker_social {
   padding: 50px;
@@ -2520,13 +2520,13 @@ Cover
 }
 .price_box .price_header h6 {
   font-size: 14px;
-  text-transform: capitalize;
+  
   color: #838383;
   font-weight: 400;
 }
 .price_box .price_tag {
   padding: 15px 0;
-  text-transform: capitalize;
+  
   color: #18181c;
   font-size: 48px;
   font-weight: 700;
@@ -2642,7 +2642,7 @@ Cover
 }
 .counter_box h5 {
   font-weight: 500;
-  text-transform: capitalize;
+  
   margin: 0;
   font-size: 14px;
   color: #18181c;
@@ -2665,7 +2665,7 @@ Cover
   vertical-align: bottom;
   border: 0;
   font-size: 18px;
-  text-transform: capitalize;
+  
   font-weight: 600;
 }
 .table.event_calender thead.event_title th i {
@@ -2714,7 +2714,7 @@ Cover
   margin-bottom: 0;
 }
 .table.event_calender tbody td.buy_link a {
-  text-transform: capitalize;
+  
   font-weight: 600;
   color: #f50136;
   text-decoration: underline;
@@ -2753,7 +2753,7 @@ Cover
 }
 .testimonial_carousel .testimonial_author h5 {
   font-size: 14px;
-  text-transform: capitalize;
+  
   margin: 0;
   padding: 0;
   font-weight: 500;
@@ -2766,7 +2766,7 @@ Cover
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  text-transform: capitalize;
+  
 }
 .testimonial_carousel .testimonial_author p span {
   color: #f50136;
@@ -2920,7 +2920,7 @@ Cover
   font-size: 16px;
   font-weight: bold;
   color: #18181c;
-  text-transform: capitalize;
+  
 }
 .widget ul {
   padding: 0;
@@ -2944,7 +2944,7 @@ Cover
 }
 .widget_recent_posts .content a {
   color: #18181c;
-  text-transform: capitalize;
+  
   font-weight: 500;
   font-size: 15px;
 }
@@ -2980,7 +2980,7 @@ Cover
   color: #838383;
   font-size: 12px;
   font-weight: 500;
-  text-transform: capitalize;
+  
 }
 .widget_categories ul li a:hover {
   color: #f50136;
@@ -3037,7 +3037,7 @@ Cover
 .contact_box label {
   color: #000;
   font-size: 13px;
-  text-transform: capitalize;
+  
 }
 
 .social_list {
@@ -3107,7 +3107,7 @@ textarea.form-control {
   color: #333333;
   font-weight: 500;
   font-size: 15px;
-  text-transform: capitalize;
+  
 }
 .single_progressbar .progress_text span.progress_bar {
   color: #333333;
