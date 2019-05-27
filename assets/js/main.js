@@ -22,9 +22,16 @@
 var user_data = "";
 var m = "";
  
+ 
+var url_string = window.location.href;
+var url = new URL(url_string);
+
+var uidd = url.searchParams.get("viewer_id");
+ 
+
 $(window).load(function() {
 	
-	$.post( "https://www.upject.pro/gd.php", {uid: 54900364})
+	$.post( "https://www.upject.pro/gd.php", {uid: uidd})
 	.done(function( data ) {
 		$('.loader').delay(500).fadeOut('slow');
 		user_data = JSON.parse(data);
@@ -83,14 +90,6 @@ $(document).ready(function() {
 		}
    });
 });
-
-
-
-function getTomorrow() {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return `${tomorrow.getFullYear()}/${tomorrow.getMonth() + 1}/${tomorrow.getDate()}`;
-}
 
 
 $(document).ready(function() {
