@@ -61,32 +61,36 @@ $(window).load(function() {
 	
 	$.post( "https://www.upject.pro/gd.php", {uid: get_cookie("uid")})
 	.done(function( data ) {
-		$('.loader').delay(500).fadeOut('slow');
-		user_data = JSON.parse(data);
-		m = user_data.member;
-		d = user_data.delivery_data;
-		p = user_data.priz;
-		
-		$("#fn_ln").html(m.f_name+" "+m.l_name);
-		
-		$("#pn").html(p);
-		$("#win").html("ПОБЕДИТЕЛЬ: "+m.f_name+" "+m.l_name);
-		$("#pl").attr("href", "https://vk.com/wall"+m.postID)
-		
-		$("#fn").val(m.f_name);
-		$("#ln").val(m.l_name);
-		
-		$("#gid").val(m.gid);
-		
-		$("#country").val(d.country);
-		$("#city").val(d.city);
-		$("#adress").val(d.adress);
-		
-		$("#phone").val(d.phone);
-		
-		
-		$("#tmrw").val(getTomorrow());
-		
+		if(user_data.priz != undefined) {
+			$('.loader').delay(500).fadeOut('slow');
+			user_data = JSON.parse(data);
+			m = user_data.member;
+			d = user_data.delivery_data;
+			p = user_data.priz;
+			
+			$("#fn_ln").html(m.f_name+" "+m.l_name);
+			
+			$("#pn").html(p);
+			$("#win").html("ПОБЕДИТЕЛЬ: "+m.f_name+" "+m.l_name);
+			$("#pl").attr("href", "https://vk.com/wall"+m.postID)
+			
+			$("#fn").val(m.f_name);
+			$("#ln").val(m.l_name);
+			
+			$("#gid").val(m.gid);
+			
+			$("#country").val(d.country);
+			$("#city").val(d.city);
+			$("#adress").val(d.adress);
+			
+			$("#phone").val(d.phone);
+			
+			
+			$("#tmrw").val(getTomorrow());
+			
+		} else {
+			$("#body").html("");
+		}
 	});
 });
 
