@@ -61,9 +61,11 @@ $(window).load(function() {
 	
 	$.post( "https://www.upject.pro/gd.php", {uid: get_cookie("uid")})
 	.done(function( data ) {
+		user_data = JSON.parse(data);
+		
 		if(user_data.priz != undefined) {
 			$('.loader').delay(500).fadeOut('slow');
-			user_data = JSON.parse(data);
+			
 			m = user_data.member;
 			d = user_data.delivery_data;
 			p = user_data.priz;
