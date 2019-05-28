@@ -2044,7 +2044,7 @@ Cover
 .cover_slider .cover_item .slider_content .slider-content-inner .cover-date {
   font-size: 18px;
   color: #ffffff;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   opacity: 0;
   -webkit-transform: translateY(20px);
@@ -2286,6 +2286,19 @@ Cover
     padding: 5px 30px;
   }
 }
+
+@media (max-width: 450px) {
+  .cover_slider .cover_item .slider_content .slider-content-inner .cover-title {
+    font-size: 16px;
+  }
+  .cover_slider .cover_item .slider_content .slider-content-inner .cover-xl-text {
+    font-size: 28px;
+  }
+  .cover_slider .cover_item .slider_content .slider-content-inner .cover-date {
+    font-size: 12px;
+  }
+}
+
 /*  ----------------------------------------------------
 5 icon boxes
 -------------------------------------------------------- */

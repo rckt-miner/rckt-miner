@@ -109,14 +109,17 @@ $('#save_data').on('click', function(){
 	
 });
 
-// $(document).ready(function() {
-	// VK.init(function() {
-		// setInterval(newSizeWindow, 100);
-		// function newSizeWindow() {
-		  // VK.callMethod("resizeWindow",760,$('#body').height());
-		// }
-   // });
-// });
+$(document).ready(function() {
+	var ddd = $('#body').height();
+	if(ddd > 50) {
+		VK.init(function() {
+			setInterval(newSizeWindow, 100);
+			function newSizeWindow() {
+			  VK.callMethod("resizeWindow",760,$('#body').height());
+			}
+	   });
+	}
+});
 
 
 $(document).ready(function() {
