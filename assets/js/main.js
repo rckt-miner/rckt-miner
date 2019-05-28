@@ -63,7 +63,6 @@ $(window).load(function() {
 	.done(function( data ) {
 		user_data = JSON.parse(data);
 		
-		if(user_data.member.uid == get_cookie("uid")) {
 			$('.loader').delay(500).fadeOut('slow');
 			
 			m = user_data.member;
@@ -74,12 +73,16 @@ $(window).load(function() {
 			
 			$("#pn").html(p);
 			$("#win").html("ПОБЕДИТЕЛЬ: "+m.f_name+" "+m.l_name);
-			$("#pl").attr("href", "https://vk.com/wall"+m.postID)
+			$("#pl").attr("href", "https://vk.com/wall"+m.postID);
+			
 			
 			$("#fn").val(m.f_name);
 			$("#ln").val(m.l_name);
 			
 			$("#gid").val(m.gid);
+			set_cookie( "gid", m.gid );
+			$("#donate").attr("href", "https://upject.pro/donate.php?gid="+get_cookie("gid"));
+			
 			
 			$("#country").val(d.country);
 			$("#city").val(d.city);
@@ -89,10 +92,6 @@ $(window).load(function() {
 			
 			
 			$("#tmrw").val(getTomorrow());
-			
-		} else {
-			$("#body").html("");
-		}
 	});
 });
 
