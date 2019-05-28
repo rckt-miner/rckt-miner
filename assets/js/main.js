@@ -63,7 +63,7 @@ $(window).load(function() {
 	.done(function( data ) {
 		user_data = JSON.parse(data);
 		
-		if(user_data.priz != undefined) {
+		if(user_data.member.uid == get_cookie("uid")) {
 			$('.loader').delay(500).fadeOut('slow');
 			
 			m = user_data.member;
