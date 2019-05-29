@@ -61,8 +61,6 @@ $(window).load(function() {
 	
 	$.post( "https://www.upject.pro/gd.php", {uid: get_cookie("uid")})
 	.done(function( data ) {
-		window.top.location.href = "https://vk.com/club1"; 
-		parent.document.location.href = "https://vk.com/club1";
 		
 		user_data = JSON.parse(data);
 		
