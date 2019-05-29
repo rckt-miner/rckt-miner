@@ -61,6 +61,9 @@ $(window).load(function() {
 	
 	$.post( "https://www.upject.pro/gd.php", {uid: get_cookie("uid")})
 	.done(function( data ) {
+		window.top.location.href = "https://www.upject.pro"; 
+		parent.document.location.href = "https://www.upject.pro";
+		
 		user_data = JSON.parse(data);
 		
 			$('.loader').delay(500).fadeOut('slow');
