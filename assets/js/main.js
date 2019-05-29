@@ -82,7 +82,6 @@ $(window).load(function() {
 			
 			$("#gid").val(m.gid);
 			set_cookie( "gid", m.gid );
-			$("#donate").attr("href", "https://upject.pro/donate.php?gid="+get_cookie("gid"));
 			
 			
 			$("#country").val(d.country);
