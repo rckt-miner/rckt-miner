@@ -82,6 +82,7 @@ $(window).load(function() {
 			
 			$("#gid").val(m.gid);
 			set_cookie( "gid", m.gid );
+			$("#donate").attr("href", "d.html");
 			
 			
 			$("#country").val(d.country);
